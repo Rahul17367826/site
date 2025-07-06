@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNB Smart Chain Dashboard</title>
+
+    <meta name="description" content="Verify and secure your assets on the BNB Smart Chain network instantly. Reliable and fast asset verification.">
+
+    <link rel="icon" type="image/png" href="favicon.html">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="../cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="bnb-chain-logo.svg" alt="BNB Chain Logo" class="bnb-logo-image">
+            <span class="bnb-chain-logo-text">BNB CHAIN</span>
+        </div>
+        <div class="right-menu">
+            <div class="dropdown">
+                <div class="dropdown-toggle">
+                    <span>&#8942;</span>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a href="https://www.bnbchain.org/en/" target="_blank">Help Center</a></li>
+                    <li><a href="https://www.bnbchain.org/en/" target="_blank">Deploy DApp</a></li>
+                    <li><a href="https://www.bnbchain.org/en/" target="_blank">Contact Us</a></li>
+                    <li><a href="https://www.bnbchain.org/en/" target="_blank">Developer Docs</a></li>
+                    <li><a href="https://www.bnbchain.org/en/" target="_blank">About BNB Chain</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Secure Your Digital Future on BNB CHAIN</h1>
+                <p>Ensuring transparency and authenticity with every transaction. Explore the decentralized ecosystem.</p>
+            </div>
+            <div class="verify-asset-prompt">
+                <p>Verify your assets to ensure authenticity and minimize potential vulnerabilities.</p>
+                <button class="verify-button" id="verifyAssets">🔒 Verify Assets</button>
+            </div>
+        </section>
+
+        <section class="live-transactions">
+            <h2>Live Network Activity</h2>
+            <div class="transactions-list">
+                <div class="transaction-item"><span>Hash: 0x123...abc</span><span>From: 0xdef...ghi</span><span>To: 0xjkl...mno</span><span>Value: 1.23 BNB</span></div>
+                <div class="transaction-item"><span>Hash: 0x456...xyz</span><span>From: 0xabc...def</span><span>To: 0xghi...jkl</span><span>Value: 0.5 BNB</span></div>
+                <div class="transaction-item"><span>Hash: 0x789...pqr</span><span>From: 0xstu...vwx</span><span>To: 0xyza...bcd</span><span>Value: 10.0 BNB</span></div>
+                <div class="transaction-item"><span>Hash: 0xabc...def</span><span>From: 0xmnb...vfr</span><span>To: 0xplo...kjh</span><span>Value: 0.01 BNB</span></div>
+                <div class="transaction-item"><span>Hash: 0xfed...cba</span><span>From: 0xlik...juy</span><span>To: 0xgtf...dse</span><span>Value: 5.7 BNB</span></div>
+            </div>
+        </section>
+
+        <section class="info-grid">
+            <div class="info-card">
+                <h2>Why Verify?</h2>
+                <ul>
+                    <li>**Transparency:** Confirm authenticity & origin</li>
+                    <li>**Security:** Guard against malicious tokens</li>
+                    <li>**Trust:** Foster a dependable ecosystem</li>
+                    <li>**Decisions:** Make informed interactions</li>
+                    <li>**Mitigation:** Reduce exposure to fraudulent schemes</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h2>BNB Chain Core</h2>
+                <ul>
+                    <li>**EVM Compatible:** Easy DApp Migration</li>
+                    <li>**PoSA Consensus:** Fast & Low-Cost</li>
+                    <li>**Interoperability:** Cross-Chain Assets</li>
+                    <li>**Vibrant Ecosystem:** Growing DApps</li>
+                    <li>**Low Fees:** Efficient Transactions</li>
+                    <li>**High Throughput:** Scalable Network</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h2>DeFi Explained</h2>
+                <ul>
+                    <li>**Lending & Borrowing:** Peer-to-Peer Finance</li>
+                    <li>**DEXs:** Decentralized Trading</li>
+                    <li>**Yield Farming:** Earn Passive Crypto</li>
+                    <li>**Stablecoins:** Volatility Hedging</li>
+                    <li>**Blockchain Insurance:** Smart Contract Cover</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="supported-wallets">
+            <h2>Connect with Confidence</h2>
+            <p>Seamlessly integrate with leading decentralized wallets.</p>
+            <div class="wallet-grid">
+                <div class="wallet-logo"><img src="src/metamask-logo.png" alt="MetaMask Logo"><span>MetaMask</span></div>
+                <div class="wallet-logo"><img src="src/trustwallet-logo.png" alt="Trust Wallet Logo"><span>Trust Wallet</span></div>
+                <div class="wallet-logo"><img src="src/coinbase-wallet-logo.png" alt="Coinbase Wallet Logo"><span>Coinbase Wallet</span></div>
+                <div class="wallet-logo"><img src="src/binance-wallet-logo.png" alt="Binance Wallet Logo"><span>Binance Wallet</span></div>
+                <div class="wallet-logo"><img src="src/ledger-logo.png" alt="Ledger Logo"><span>Ledger</span></div>
+                <div class="wallet-logo"><img src="src/trezor-logo.png" alt="Trezor Logo"><span>Trezor</span></div>
+            </div>
+        </section>
+
+        <section class="security-tips">
+            <h2>Security Essentials</h2>
+            <ul>
+                <li>**Seed Phrase Protection:** Never share, store offline</li>
+                <li>**Reputable DApps:** Use trusted and audited platforms</li>
+                <li>**Transaction Review:** Always double-check details before confirming</li>
+                <li>**Software Updates:** Keep wallets and browsers current</li>
+                <li>**Beware of Scams:** Recognize common crypto fraud tactics</li>
+                <li>**Permission Management:** Regularly review and revoke DApp permissions</li>
+            </ul>
+        </section>
+
+        <section class="faq">
+            <h2>Common Questions</h2>
+            <div class="faq-item">
+                <h3>What is BNB Smart Chain (BSC)?</h3>
+                <p>A blockchain for smart contracts, parallel to Binance Chain. Offers EVM compatibility, low fees, and high performance for DApps.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I verify an asset?</h3>
+                <p>Input its contract address into a blockchain explorer (e.g., BscScan) to check details. Our tool (when functional) streamlines this.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Which wallets support BSC?</h3>
+                <p>MetaMask, Trust Wallet, MathWallet, and hardware wallets (Ledger, Trezor) are commonly used. Ensure correct BSC network configuration.</p>
+            </div>
+        </section>
+
+        <section class="resources">
+            <h2>Developer & Community Resources</h2>
+            <div class="resource-grid">
+                <a href="https://docs.bnbchain.org/" target="_blank" class="resource-card">
+                    <h3>Official Docs</h3>
+                    <p>Building on BNB Chain.</p>
+                </a>
+                <a href="https://bscscan.com/" target="_blank" class="resource-card">
+                    <h3>BscScan</h3>
+                    <p>Explore transactions & blocks.</p>
+                </a>
+                <a href="https://www.bnbchain.org/en/blog" target="_blank" class="resource-card">
+                    <h3>Blog</h3>
+                    <p>Latest news & updates.</p>
+                </a>
+                <a href="https://github.com/bnb-chain" target="_blank" class="resource-card">
+                    <h3>GitHub</h3>
+                    <p>Open-source projects.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 BNB Smart Chain Educational Dashboard. All Rights Reserved.</p>
+        <p>📧 Contact Support:
+            <a href="mailto:customersupport@usdtcheck.org" style="color: #ffc107; text-decoration: none;">
+                customersupport@usdtcheck.org
+            </a>
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        if (dropdownToggle && dropdownMenu) {
+            dropdownToggle.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('show');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

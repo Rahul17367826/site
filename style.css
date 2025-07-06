@@ -1,0 +1,622 @@
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* More modern font */
+    background-color: #121212; /* Even darker background */
+    color: #e0e0e0; /* Lighter text for contrast */
+    text-align: left; /* Default to left for better content flow */
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    padding: 1.2rem 3rem; /* Increased padding */
+    background: #000;
+    border-bottom: 3px solid #ffc107; /* Thicker yellow border */
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow for sticky header */
+}
+
+.logo {
+    font-size: 1.8rem; /* Larger logo text */
+    font-weight: bold;
+    color: #ffc107; /* Ensures the yellow color */
+    display: flex; /* For alignment with image */
+    align-items: center;
+}
+
+.bnb-logo-image {
+    height: 35px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.bnb-chain-logo-text {
+    text-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
+}
+
+/* Updated .menu to .dropdown-toggle for consistency with new HTML */
+.dropdown-toggle {
+    font-size: 2rem; /* Larger dots */
+    cursor: pointer;
+    color: #ffc107;
+    padding: 0.6rem; /* More clickable area */
+    border-radius: 50%; /* Circular button */
+    background-color: rgba(255, 193, 7, 0.1); /* Subtle yellow background */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: rgba(255, 193, 7, 0.2);
+    transform: rotate(90deg); /* Rotate effect on hover */
+}
+
+/* Styles for the dropdown menu */
+.right-menu {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2a2a2a; /* Darker background for menu */
+    list-style: none;
+    padding: 0.8rem 0; /* More padding */
+    margin: 0.5rem 0 0 0;
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+    display: none;
+    z-index: 10;
+    min-width: 180px; /* Wider menu */
+    border: 1px solid rgba(255, 193, 7, 0.3); /* Subtle yellow border */
+}
+
+.dropdown-menu.show {
+    display: block;
+    animation: fadeIn 0.3s ease-out; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.8rem 1.8rem; /* More padding */
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #ffc107;
+    color: #121212; /* Dark text on yellow hover */
+}
+
+
+main {
+    padding: 3rem 2rem; /* More top/bottom padding */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #ffc107; /* Gold color */
+    font-size: 3.5rem; /* Large, impactful heading */
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(255, 193, 7, 0.6); /* Glow effect */
+    text-align: center; /* Center the main heading */
+}
+
+/* This is the new hero section content, which includes the verification prompt */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem; /* More padding */
+    background: linear-gradient(135deg, #1f1f1f, #0f0f0f); /* Gradient background */
+    box-shadow: none; /* No extra shadow here */
+    border: none;
+    margin-bottom: 3rem;
+    border-radius: 12px; /* Add border radius to hero section */
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.verification-box, .verify-asset-prompt { /* Apply styles to both if needed, or just .verify-asset-prompt */
+    background-color: #2a2a2a;
+    border: 2px solid #ffc107; /* Prominent border */
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    display: inline-block; /* Keep inline-block from original */
+    margin-top: 2rem; /* Adjusted margin-top */
+    max-width: 550px; /* Limit width */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.verify-asset-prompt::before { /* Subtle highlight effect */
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,193,7,0.2) 0%, transparent 70%);
+    transform: rotate(45deg);
+    z-index: 0;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: pulse-glow 3s infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.verification-box p, .verify-asset-prompt p {
+    font-size: 1.1rem;
+    color: #bbb;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+button, .verify-button { /* Apply styles to both generic button and specific verify-button */
+    background-color: #ffc107;
+    color: #121212; /* Dark text on gold */
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px; /* More rounded */
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+button:hover, .verify-button:hover {
+    background-color: #e0a800; /* Darker gold on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.6); /* Stronger glow on hover */
+}
+
+/* Styles for new sections */
+section {
+    margin-bottom: 4rem; /* More spacing between sections */
+    background-color: #1a1a1a; /* Darker section background */
+    padding: 2.5rem; /* More padding */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+    border: 1px solid rgba(255, 193, 7, 0.1); /* Subtle border */
+}
+
+section h2 {
+    color: #ffc107;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem; /* Larger section titles */
+    border-bottom: 2px solid rgba(255, 193, 7, 0.4); /* Stronger underline */
+    padding-bottom: 0.8rem;
+    text-align: center; /* Center section titles */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Live Transactions */
+.live-transactions h2 {
+    margin-bottom: 1.8rem;
+}
+
+.transactions-list {
+    max-height: 350px; /* Slightly taller */
+    overflow-y: auto;
+    padding-right: 15px;
+    border: 1px solid rgba(255, 193, 7, 0.2); /* Border for the list container */
+    border-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.transactions-list::-webkit-scrollbar {
+    width: 8px;
+}
+.transactions-list::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 10px;
+}
+.transactions-list::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+.transactions-list::-webkit-scrollbar-thumb:hover {
+    background: #ffc107;
+}
+
+.transaction-item {
+    background-color: #252525;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.6rem; /* More space between items */
+    border-radius: 6px;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #ffc107; /* Thicker highlight */
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+.transaction-item:hover {
+    background-color: #303030;
+}
+
+.transaction-item:last-child {
+    margin-bottom: 0;
+}
+
+.transaction-item span {
+    margin-right: 1.5rem; /* More space between details */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Truncate long hashes */
+    flex-shrink: 0;
+}
+.transaction-item span:last-child {
+    margin-right: 0;
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 4rem;
+}
+
+.info-card {
+    background-color: #1f1f1f;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 193, 7, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.info-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 193, 7, 0.3);
+    padding-bottom: 0.5rem;
+    text-align: left;
+}
+
+.info-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.info-card li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem;
+    position: relative;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.info-card li::before {
+    content: '★';
+    color: #ffc107;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.1rem;
+}
+
+/* Supported Wallets */
+.supported-wallets h2 {
+    margin-bottom: 0.8rem;
+}
+.supported-wallets p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #bbb;
+    margin-bottom: 2rem;
+}
+
+.wallet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    justify-items: center;
+    padding: 1.5rem;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 193, 7, 0.1);
+}
+
+.wallet-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.wallet-logo img {
+    max-width: 80%;
+    height: auto;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.wallet-logo img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* Security Tips */
+.security-tips h2 {
+    margin-bottom: 1.5rem;
+}
+
+.security-tips ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.security-tips li {
+    margin-bottom: 0.9rem;
+    padding-left: 2rem;
+    position: relative;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.security-tips li::before {
+    content: '🛡️';
+    color: #ffc107;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+}
+
+/* FAQ */
+.faq h2 {
+    margin-bottom: 1.5rem;
+}
+
+.faq-item {
+    background-color: #252525;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.faq-item:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-2px);
+}
+
+.faq-item h3 {
+    color: #ffc107;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
+}
+
+.faq-item p {
+    color: #bbb;
+    font-size: 0.95rem;
+}
+
+/* Resources */
+.resources h2 {
+    margin-bottom: 1.8rem;
+}
+
+.resources .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+}
+
+.resource-card {
+    background-color: #2a2a2a;
+    padding: 1.8rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 193, 7, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.resource-card:hover {
+    transform: translateY(-8px);
+    background-color: #333;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+    border-color: #ffc107;
+}
+
+.resource-card h3 {
+    color: #ffc107;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    font-size: 1.4rem;
+}
+
+.resource-card p {
+    font-size: 1rem;
+    color: #ccc;
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: 4rem; /* More space from last section */
+    padding: 2rem 0; /* More padding */
+    background: #000;
+    color: #888; /* Slightly lighter footer text */
+    border-top: 3px solid #ffc107; /* Thicker yellow border */
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer a {
+    color: #ffc107; /* Make the email link yellow in the footer */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #e0a800; /* Darker yellow on hover */
+    text-decoration: underline;
+}
+
+/* Basic Responsiveness */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .dropdown-toggle {
+        font-size: 1.7rem;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    section {
+        padding: 1.8rem;
+        margin-bottom: 3rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+        padding-bottom: 0.6rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .verification-box, .verify-asset-prompt {
+        padding: 1.2rem 1.5rem;
+        max-width: 90%;
+    }
+
+    button, .verify-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .transactions-list {
+        max-height: 250px;
+    }
+
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.85rem;
+    }
+    .transaction-item span {
+        margin-right: 0;
+        margin-bottom: 0.3rem;
+        width: 100%;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card h2 {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+    .info-card li {
+        font-size: 0.95rem;
+    }
+
+    .wallet-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+
+    .security-tips li {
+        font-size: 0.95rem;
+    }
+    .faq-item h3 {
+        font-size: 1.2rem;
+    }
+    .resources .resource-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.8rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .dropdown-toggle {
+        font-size: 1.5rem;
+        padding: 0.4rem;
+    }
+}
